@@ -1,42 +1,116 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
     <title>@ViewData["Title"] - Green4Ever</title>
 
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/pages/signin.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
+    <div class="navbar navbar-fixed-top">
+
+        <div class="navbar-inner">
+
+            <div class="container">
+
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Green4Ever</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+                </a>
+
+                <a class="brand" href="index.html">
+                    Green4Ever
+                </a>
+
+                <div class="nav-collapse">
+                    <ul class="nav pull-right">
+
+                        <li class="">
+                            <a href="signup.html" class="">
+                                Don't have an account?
+                            </a>
+
+                        </li>
+
+                        <li class="">
+                            <a href="index.html" class="">
+                                <i class="icon-chevron-left"></i>
+                                Back to Homepage
+                            </a>
+
+                        </li>
+                    </ul>
+
+                </div><!--/.nav-collapse -->
+
+            </div> <!-- /container -->
+
+        </div> <!-- /navbar-inner -->
+
+    </div> <!-- /navbar -->
+
+
+
+    <div class="account-container">
+
+        <div class="content clearfix">
+
+            <form action="#" method="post">
+
+                <h1>Member Login</h1>
+
+                <div class="login-fields">
+
+                    <p>Please provide your details</p>
+
+                    <div class="field">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" value="" placeholder="Username" class="login username-field" />
+                    </div> <!-- /field -->
+
+                    <div class="field">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" value="" placeholder="Password" class="login password-field" />
+                    </div> <!-- /password -->
+
+                </div> <!-- /login-fields -->
+
+                <div class="login-actions">
+
+                    <span class="login-checkbox">
+                        <input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
+                        <label class="choice" for="Field">Keep me signed in</label>
+                    </span>
+
+                    <button class="button btn btn-success btn-large">Sign In</button>
+
+                </div> <!-- .actions -->
+
+
+
+            </form>
+
+        </div> <!-- /content -->
+
+    </div> <!-- /account-container -->
+
+
+
+    <div class="login-extra">
+        <a href="#">Reset Password</a>
+    </div> <!-- /login-extra -->
 
     <partial name="_CookieConsentPartial" />
 
@@ -48,27 +122,9 @@
         </footer>
     </div>
 
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/bootstrap.js"></script>
 
-    @RenderSection("Scripts", required: false)
+    <script src="js/signin.js"></script>
 </body>
 </html>
